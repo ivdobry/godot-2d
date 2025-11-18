@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://c57b2mxc0wol1"]
+[gd_scene load_steps=4 format=4 uid="uid://c57b2mxc0wol1"]
 
 [ext_resource type="TileSet" uid="uid://cohrhxxer8pis" path="res://tile_sets/dungeon.tres" id="1_ghvtn"]
 [ext_resource type="PackedScene" uid="uid://dy117djp0kt6s" path="res://scenes/edges/edges.tscn" id="2_janvk"]
+[ext_resource type="PackedScene" uid="uid://nnxv3fesaw4g" path="res://scenes/Player/player.tscn" id="3_janvk"]
 
 [node name="Level1" type="Node2D"]
 
@@ -15,3 +16,6 @@ tile_map_data = PackedByteArray("AAAEAPn/AAACAAMAAAAEAPr/AAACAAMAAAAEAPv/AAACAAM
 tile_set = ExtResource("1_ghvtn")
 
 [node name="Edges" parent="." instance=ExtResource("2_janvk")]
+
+[node name="Player" parent="." instance=ExtResource("3_janvk")]
+position = Vector2(27, -33)
