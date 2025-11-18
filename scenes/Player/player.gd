@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	
 	# Jump
-	if Input.is_action_just_pressed("jump") && is_on_floor():
+	if (Input.is_action_just_pressed("jump") || Input.is_action_just_pressed("ui_accept")) && is_on_floor():
 		velocity.y = _jump_velocity 
 	
 	# Lateral movement
