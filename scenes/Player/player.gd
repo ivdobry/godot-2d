@@ -1,11 +1,20 @@
 extends CharacterBody2D
 
 @export var animation: AnimatedSprite2D
+@export var area_2d: Area2D
+@export var player_material_red: ShaderMaterial
 
 var _velocity: float = 100.0
 var _jump_velocity: float = -300.0
+var _dead: bool
+
+func _ready() -> void:
+	area_2d.body_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta: float) -> void:
+	if _dead:
+		return
+		
 	# Gravityd 
 	velocity += get_gravity() * delta
 	
@@ -31,3 +40,8 @@ func _physics_process(delta: float) -> void:
 		animation.play("running")
 	else:
 		animation.play("idle")
+		
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	animation.material = player_material_red
+	_dead = true
+	animation.stop()
