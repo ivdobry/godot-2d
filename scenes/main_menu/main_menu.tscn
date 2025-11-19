@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://rp81ey02vhm4"]
+
+[ext_resource type="Theme" uid="uid://womatm8ucbgo" path="res://themes/main_menu_button.tres" id="1_fsom3"]
+[ext_resource type="Script" uid="uid://qym1gir2x36l" path="res://scenes/main_menu/exit.gd" id="2_0ebjn"]
+[ext_resource type="Script" uid="uid://dc7t7fn36cn3j" path="res://scenes/main_menu/play.gd" id="2_ob46e"]
+[ext_resource type="PackedScene" uid="uid://bvxbqfjbm3dc1" path="res://scenes/main_scene/main_scene.tscn" id="3_uqeha"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fsom3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_fsom3")
+text = "Play"
+script = ExtResource("2_ob46e")
+main_scene = ExtResource("3_uqeha")
+
+[node name="Load" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_fsom3")
+text = "Load"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_fsom3")
+text = "Exit"
+script = ExtResource("2_0ebjn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control"]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_fsom3")
