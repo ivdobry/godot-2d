@@ -51,3 +51,5 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	
 	await get_tree().create_timer(0.5).timeout
 	dead_player.emit()
+	
+	GlobalController.add_death()
