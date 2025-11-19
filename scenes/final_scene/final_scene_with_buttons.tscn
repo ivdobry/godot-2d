@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlgonkhj3bgvh"]
+
+[ext_resource type="Theme" uid="uid://womatm8ucbgo" path="res://themes/main_menu_button.tres" id="1_nf13o"]
+[ext_resource type="Script" uid="uid://jw4fld600fcj" path="res://scenes/final_scene/exit.gd" id="4_sx3gd"]
+[ext_resource type="PackedScene" uid="uid://n330g4fwmvhb" path="res://scenes/particles/menu_particles.tscn" id="5_sx3gd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_60a2l"]
+font_size = 80
+
+[node name="FinalSceneWithButtons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.5
+offset_top = -124.0
+offset_right = 298.5
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You win!! YEEET"
+label_settings = SubResource("LabelSettings_60a2l")
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_nf13o")
+text = "Exit"
+script = ExtResource("4_sx3gd")
+
+[node name="Control" parent="." instance=ExtResource("5_sx3gd")]
+layout_mode = 1
