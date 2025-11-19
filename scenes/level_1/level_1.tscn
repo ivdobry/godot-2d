@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://c57b2mxc0wol1"]
+[gd_scene load_steps=6 format=4 uid="uid://c57b2mxc0wol1"]
 
 [ext_resource type="TileSet" uid="uid://cohrhxxer8pis" path="res://tile_sets/dungeon.tres" id="1_ghvtn"]
 [ext_resource type="PackedScene" uid="uid://iyp0pv5ob5xh" path="res://scenes/trap/trap.tscn" id="1_igcjm"]
 [ext_resource type="PackedScene" uid="uid://dy117djp0kt6s" path="res://scenes/edges/edges.tscn" id="2_janvk"]
 [ext_resource type="PackedScene" uid="uid://nnxv3fesaw4g" path="res://scenes/Player/player.tscn" id="3_janvk"]
+[ext_resource type="PackedScene" uid="uid://lx1khsxlxjxe" path="res://scenes/coin/coin.tscn" id="5_jr17i"]
 
 [node name="Level1" type="Node2D"]
 
@@ -23,3 +24,12 @@ tile_set = ExtResource("1_ghvtn")
 
 [node name="Player" parent="." instance=ExtResource("3_janvk")]
 position = Vector2(27, -33)
+
+[node name="Coin" parent="." instance=ExtResource("5_jr17i")]
+position = Vector2(-14, -69)
+
+[node name="Coin2" parent="." instance=ExtResource("5_jr17i")]
+position = Vector2(-95, -69)
+
+[node name="Coin3" parent="." instance=ExtResource("5_jr17i")]
+position = Vector2(-182, -70)

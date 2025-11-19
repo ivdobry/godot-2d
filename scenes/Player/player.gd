@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if _dead:
 		return
 		
-	# Gravityd 
+	# Gravity
 	velocity += get_gravity() * delta
 	
 	# Jump
