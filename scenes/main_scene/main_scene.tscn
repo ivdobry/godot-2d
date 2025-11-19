@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvxbqfjbm3dc1"]
+[gd_scene load_steps=6 format=3 uid="uid://bvxbqfjbm3dc1"]
 
 [ext_resource type="Script" uid="uid://cdcrlflnk43e2" path="res://scenes/main_scene/main_scene.gd" id="1_6iw8k"]
+[ext_resource type="PackedScene" uid="uid://bqj7rcsvwmbrb" path="res://scenes/final_scene/final_scene.tscn" id="2_34m6u"]
 [ext_resource type="PackedScene" uid="uid://c57b2mxc0wol1" path="res://scenes/level_1/level_1.tscn" id="2_symxd"]
 [ext_resource type="PackedScene" uid="uid://midj47rgrev1" path="res://scenes/level_2/level_2.tscn" id="3_o5t4i"]
+[ext_resource type="AudioStream" uid="uid://csyoql15iygaw" path="res://music/musica.wav" id="5_2cqfw"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_6iw8k")
-levels = Array[PackedScene]([ExtResource("2_symxd"), ExtResource("3_o5t4i")])
+levels = Array[PackedScene]([ExtResource("2_symxd"), ExtResource("3_o5t4i"), ExtResource("2_34m6u")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.405, 2.405)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2cqfw")
+autoplay = true
+bus = &"Music"
