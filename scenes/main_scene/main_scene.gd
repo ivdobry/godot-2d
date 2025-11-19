@@ -27,3 +27,7 @@ func _reset_level() -> void:
 	_destroy_level()
 	_create_level.call_deferred(_actual_level)
 	
+func next_level() -> void:
+	_actual_level += 1
+	_destroy_level()
+	_create_level.call_deferred(_actual_level)
