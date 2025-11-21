@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GameData" load_steps=2 format=3 uid="uid://du5dsx50bafyq"]
+
+[ext_resource type="Script" uid="uid://dfq1bq6s823kw" path="res://scripts/game_data.gd" id="1_60bu5"]
+
+[resource]
+script = ExtResource("1_60bu5")
+metadata/_custom_type_script = "uid://dfq1bq6s823kw"

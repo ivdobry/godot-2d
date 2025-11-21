@@ -5,6 +5,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalController.deaths_update.connect(_update_text)
+	_update_text()
 
 func _update_text() -> void:
 	label.text = str(GlobalController.deaths)

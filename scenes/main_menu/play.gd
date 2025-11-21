@@ -4,8 +4,8 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pressed.connect(_play, 4)
+	pressed.connect(play, 4)
 
 
-func _play() -> void:
+func play() -> void:
 	get_tree().change_scene_to_packed(main_scene)

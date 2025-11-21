@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvxbqfjbm3dc1"]
+[gd_scene load_steps=8 format=3 uid="uid://bvxbqfjbm3dc1"]
 
 [ext_resource type="Script" uid="uid://cdcrlflnk43e2" path="res://scenes/main_scene/main_scene.gd" id="1_6iw8k"]
 [ext_resource type="PackedScene" uid="uid://bqj7rcsvwmbrb" path="res://scenes/final_scene/final_scene.tscn" id="2_34m6u"]
 [ext_resource type="PackedScene" uid="uid://c57b2mxc0wol1" path="res://scenes/level_1/level_1.tscn" id="2_symxd"]
 [ext_resource type="PackedScene" uid="uid://midj47rgrev1" path="res://scenes/level_2/level_2.tscn" id="3_o5t4i"]
 [ext_resource type="AudioStream" uid="uid://csyoql15iygaw" path="res://music/musica.wav" id="5_2cqfw"]
+[ext_resource type="PackedScene" uid="uid://ctocwr5o5q7ub" path="res://scenes/game_controller/game_controller.tscn" id="6_6loks"]
 [ext_resource type="PackedScene" uid="uid://42m41yxmc3mf" path="res://scenes/death_count/death_count.tscn" id="6_kbdpr"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("game_controller")]
 script = ExtResource("1_6iw8k")
 levels = Array[PackedScene]([ExtResource("2_symxd"), ExtResource("3_o5t4i"), ExtResource("2_34m6u")])
+game_controller = NodePath("GameController")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.405, 2.405)
@@ -18,6 +20,8 @@ zoom = Vector2(2.405, 2.405)
 stream = ExtResource("5_2cqfw")
 autoplay = true
 bus = &"Music"
+
+[node name="GameController" parent="." instance=ExtResource("6_6loks")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
